@@ -1,0 +1,17 @@
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.section--display {
+  display: flex;
+}
+.section--position:not(:last-child) {
+  margin-right: 30px;
+}
+.section__title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  margin-bottom: 50px;
+}

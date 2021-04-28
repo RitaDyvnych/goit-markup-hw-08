@@ -1,0 +1,42 @@
+.menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__list:not(:last-child) {
+  margin-right: 50px;
+}
+
+.menu__icon-mail {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.menu__icon-tel {
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.menu--nav-color {
+  color: var(--logo-sec-color);
+}
+
+.menu--contacts-color {
+  color: var(--second-text-color);
+}
