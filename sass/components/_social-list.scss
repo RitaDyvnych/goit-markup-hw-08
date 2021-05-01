@@ -1,5 +1,6 @@
 .social-list {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
 }
 
 .social-list__item + .social-list__item {
