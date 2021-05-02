@@ -15,8 +15,30 @@
   justify-content: center;
 }
 
-.menu__list:not(:last-child) {
-  margin-right: 50px;
+.menu__list:first-child {
+  @media screen and (min-width: 1200px) {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .menu__list:first-child .menu__link {
+    padding-top: 21px;
+    padding-bottom: 5px;
+  }
+
+  .menu__list + .menu__list .menu__link {
+    padding-top: 5px;
+    padding-bottom: 21px;
+  }
+}
+.menu__list {
+  justify-content: start;
+}
+
+.menu--direction-contacts {
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+  }
 }
 
 .menu__icon-mail {
@@ -32,11 +54,9 @@
   margin-right: 10px;
   fill: currentColor;
 }
-
 .menu--nav-color {
   color: var(--logo-sec-color);
 }
-
 .menu--contacts-color {
   color: var(--second-text-color);
 }
