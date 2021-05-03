@@ -6,10 +6,14 @@
 
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15;
+  line-height: 1.5;
   text-align: center;
 
   color: var(--main-text-color);
+
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
 }
 
 .form__input {
@@ -98,11 +102,17 @@
 /* checkbox */
 
 .form__checkbox {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
-  margin-left: 12px;
+
   margin-bottom: 30px;
   cursor: pointer;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 12px;
+  }
 }
 
 .form__icon-checkbox {
@@ -123,9 +133,14 @@
   padding-left: 8px;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  font-size: 12px;
+  line-height: 1.16;
   color: var(--second-text-color);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .form__link-checkbox {
