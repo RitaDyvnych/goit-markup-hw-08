@@ -54,6 +54,9 @@
 .form__input:focus + .form__icon {
   fill: var(--logo-color);
 }
+.form__input:hover + .form__icon {
+  fill: var(--logo-color);
+}
 
 .form__label {
   margin-bottom: 4px;
@@ -102,42 +105,59 @@
 /* checkbox */
 
 .form__checkbox {
+  position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-
-  margin-bottom: 30px;
   cursor: pointer;
 
   @media screen and (min-width: 1200px) {
     margin-left: 12px;
   }
 }
+.form__input-checkbox {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:checked + .form__icon-checkbox {
+    width: 16px;
+    height: 15px;
+    content: "";
+    background-color: var(--logo-color);
+    background-image: url(../images/icons/check.svg);
+  }
+}
 
 .form__icon-checkbox {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   width: 16px;
   height: 15px;
   background-image: url(../images/icons/checkbox.svg);
 }
 
-.form__input-checkbox:checked + .form__icon-checkbox {
-  width: 16px;
-  height: 15px;
-  border-radius: 2px;
-  background-color: var(--logo-color);
-  background-image: url(../images/icons/check.svg);
-}
-
 .form__label-checkbox {
-  padding-left: 8px;
+  padding-left: 24px;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
   color: var(--second-text-color);
 
+  @media screen and (min-width: 480px) {
+    padding-left: 16px;
+  }
   @media screen and (min-width: 1200px) {
+    padding-left: 8px;
     font-size: 14px;
     line-height: 1.71;
   }
@@ -154,4 +174,5 @@
   width: 200px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 }

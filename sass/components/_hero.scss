@@ -1,5 +1,6 @@
 .hero {
-  max-width: 480px;
+  max-width: 768px;
+  background-size: cover;
   height: 400px;
   padding-top: 118px;
   padding-bottom: 118px;
@@ -13,12 +14,11 @@
     ),
     url(../images/mob/hero-bcg_mob.jpeg);
   text-align: center;
-  background-size: 480px 400px;
 
   @media screen and (min-width: 768px) {
-    max-width: 768px;
+    max-width: 1200px;
+    background-size: cover;
     height: 400px;
-    background-size: 768px 400px;
 
     background-image: linear-gradient(
         to right,

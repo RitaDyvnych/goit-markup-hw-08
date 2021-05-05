@@ -120,6 +120,31 @@ img {
   }
 }
 
+.container__hero {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 479px) {
+  .container__hero {
+    width: auto;
+    max-width: 320px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .container__hero {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container__hero {
+    width: 696px;
+  }
+}
+
 .header {
   border-bottom: 1px solid #ececec;
 }
@@ -331,6 +356,12 @@ img {
   color: var(--logo-color);
 }
 
+@media screen and (max-width: 479px) {
+  .mobile-menu__tel {
+    font-size: 26px;
+  }
+}
+
 .mobile-menu__mail {
   text-decoration: none;
   color: inherit;
@@ -363,6 +394,9 @@ img {
 }
 
 .mobile-menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   z-index: 2;
   display: inline-flex;
   margin: 0;
@@ -376,6 +410,12 @@ img {
 
 .mobile-menu-btn:hover, .mobile-menu-btn:focus {
   fill: var(--logo-color);
+}
+
+.mobile-menu-btn.is-open {
+  position: fixed;
+  top: 10px;
+  right: 15px;
 }
 
 .mobile-menu-btn.is-open .mobile-menu-btn__icon-menu-close {
@@ -397,7 +437,8 @@ img {
 }
 
 .hero {
-  max-width: 480px;
+  max-width: 768px;
+  background-size: cover;
   height: 400px;
   padding-top: 118px;
   padding-bottom: 118px;
@@ -406,14 +447,13 @@ img {
   background-color: var(--section-bcg-color);
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mob/hero-bcg_mob.jpeg);
   text-align: center;
-  background-size: 480px 400px;
 }
 
 @media screen and (min-width: 768px) {
   .hero {
-    max-width: 768px;
+    max-width: 1200px;
+    background-size: cover;
     height: 400px;
-    background-size: 768px 400px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/tablet/hero-bcg_tablet.jpeg);
   }
 }
@@ -517,56 +557,42 @@ img {
 }
 
 .section--display {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
 }
 
 @media screen and (min-width: 768px) {
   .section--display {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -30px;
-    margin-top: -30px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .section--display {
-    display: flex;
     margin-left: -30px;
   }
 }
 
 .benefits--display {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
 }
 
 @media screen and (min-width: 768px) {
   .benefits--display {
-    display: flex;
-    flex-wrap: wrap;
     margin-left: -30px;
-    margin-top: -30px;
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .benefits--display {
-    display: flex;
-    margin-left: -30px;
-  }
+.benefits--position {
+  margin-top: 30px;
 }
 
 @media screen and (min-width: 768px) {
   .benefits--position {
     margin-left: 30px;
-    margin-top: 30px;
     flex-basis: calc((100% - 30px * 2) / 2);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .benefits--position {
-    margin-left: 30px;
     flex-basis: calc((100% - 30px * 4) / 4);
   }
 }
@@ -665,6 +691,7 @@ img {
 }
 
 .team__member {
+  margin-top: 30px;
   background-color: var(--other-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -673,14 +700,12 @@ img {
 @media screen and (min-width: 768px) {
   .team__member {
     margin-left: 30px;
-    margin-top: 30px;
     flex-basis: calc((100% - 30px * 2) / 2);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .team__member {
-    margin-left: 30px;
     flex-basis: calc((100% - 30px * 4) / 4);
   }
 }
@@ -1132,6 +1157,10 @@ img {
   fill: var(--logo-color);
 }
 
+.form__input:hover + .form__icon {
+  fill: var(--logo-color);
+}
+
 .form__label {
   margin-bottom: 4px;
   font-style: normal;
@@ -1175,11 +1204,12 @@ img {
 
 /* checkbox */
 .form__checkbox {
+  position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-bottom: 30px;
   cursor: pointer;
 }
 
@@ -1189,22 +1219,36 @@ img {
   }
 }
 
-.form__icon-checkbox {
+.form__input-checkbox {
   width: 16px;
-  height: 15px;
-  background-image: url(../images/icons/checkbox.svg);
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .form__input-checkbox:checked + .form__icon-checkbox {
   width: 16px;
   height: 15px;
-  border-radius: 2px;
+  content: "";
   background-color: var(--logo-color);
   background-image: url(../images/icons/check.svg);
 }
 
+.form__icon-checkbox {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 15px;
+  background-image: url(../images/icons/checkbox.svg);
+}
+
 .form__label-checkbox {
-  padding-left: 8px;
+  padding-left: 24px;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -1212,8 +1256,15 @@ img {
   color: var(--second-text-color);
 }
 
+@media screen and (min-width: 480px) {
+  .form__label-checkbox {
+    padding-left: 16px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .form__label-checkbox {
+    padding-left: 8px;
     font-size: 14px;
     line-height: 1.71;
   }
@@ -1230,6 +1281,7 @@ img {
   width: 200px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 }
 
 .filter {
@@ -1309,6 +1361,7 @@ img {
 
 .gallery__item {
   margin-top: 30px;
+  border: 1px solid #eeeeee;
 }
 
 @media screen and (min-width: 768px) {
@@ -1359,13 +1412,19 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.overlay__text,
 .overlay__text {
   padding: 63px 24px;
   font-weight: normal;
   font-size: 18px;
   line-height: 1.56;
   color: var(--other-color);
+}
+
+@media screen and (max-width: 479px) {
+  .overlay__text {
+    padding-top: 15px;
+    font-size: 15px;
+  }
 }
 
 .gallery__subtitle {
@@ -1386,21 +1445,6 @@ img {
 /* рамка внизу карточки */
 .gallery__border {
   width: 100%;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
   padding: 20px 24px;
-}
-
-@media screen and (min-width: 768px) {
-  .gallery__item:first-child .gallery__border {
-    padding-bottom: 56px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .gallery__item:first-child .gallery__border {
-    padding-bottom: 20px;
-  }
 }
 /*# sourceMappingURL=main.css.map */
